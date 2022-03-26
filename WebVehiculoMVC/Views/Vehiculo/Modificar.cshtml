@@ -1,0 +1,31 @@
+﻿@model WebVehiculoMVC.Models.VehiculoMarca
+@{
+    ViewBag.Title = "Modificar";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Modificar</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Modificar Vehiculo</h1>
+
+    <table>
+
+        @using (Html.BeginForm())
+        {
+            <tr><td>Ingrese ID a Modificar</td><td>@Html.TextBoxFor(VM => VM.V.IdV)</td></tr>
+            <tr><td>Nombre</td><td>@Html.TextBoxFor(VM => VM.V.NombreV)</td></tr>
+            <tr><td>Modelo</td><td>@Html.TextBoxFor(VM => VM.V.ModeloV)</td></tr>
+            <tr><td>Marca</td><td>@Html.DropDownListFor(VM => VM.V.IdM, new SelectList(@Model.M, "idM", "nombreM"))</td></tr>
+            <tr><td></td><td><input type="submit" value="Modificar" /></td></tr>
+        }
+    </table>
+    <br />
+    @Html.ActionLink("Vovler", "Index");
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+﻿@model WebVehiculoMVC.Models.VehiculoMarca
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Eliminar</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Eliminar Vehiculo</h1>
+
+    <table>
+
+        @using (Html.BeginForm())
+        {
+            <tr><td>Ingrese ID a Eliminar</td><td>@Html.TextBoxFor(VM => VM.V.IdV)</td></tr>
+            <tr><td></td><td><input type="submit" value="Eliminar" /></td></tr>
+
+        }
+    </table>
+    <br />
+    @Html.ActionLink("Vovler", "Index");
+</body>
+</html>
+
